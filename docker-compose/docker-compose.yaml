@@ -2,13 +2,9 @@ version: '3.9'
 
 services:
   cassandra:
-    image: cassandra:3.0
- #   image: cassandra:4.1.0
+    image: cassandra:4.1.0
     ports:
       - "9042:9042"
-#    volumes:
-#      - ./config/cassandra.yaml:/etc/cassandra/cassandra.yaml
-#      - ./scripts/cql:/tmp/cql
     environment:
       - CASSANDRA_CLUSTER_NAME=test
     networks:
@@ -25,18 +21,6 @@ services:
       - cassandra_network
     command: >
       bash ./docker-entrypoint.sh/execute-cql.sh
-
-#  bash:
-#    image: bash:5.2.15
-##    stdin_open: true
-##    tty: true
-#    networks:
-#      - cassandra_network
-#    volumes:
-#      - ./scripts/bash:/docker-entrypoint.sh
-##      - may need to do chmod +x
-#    command: >
-#      bash ./docker-entrypoint.sh/execute-cql.sh
 
 networks:
   cassandra_network:
