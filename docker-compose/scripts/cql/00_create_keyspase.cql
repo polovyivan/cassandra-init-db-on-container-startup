@@ -1,5 +1,5 @@
--- USE ax;
-CREATE KEYSPACE ax
+
+CREATE KEYSPACE iot
     WITH REPLICATION = {
         'class' : 'NetworkTopologyStrategy',
         'datacenter1' : 1

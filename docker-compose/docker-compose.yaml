@@ -1,17 +1,17 @@
 version: '3.9'
 
 services:
-  cassandra:
+  cassandra_db:
     image: cassandra:4.1.0
     ports:
       - "9042:9042"
     environment:
-      - CASSANDRA_CLUSTER_NAME=test
+      - CASSANDRA_CLUSTER_NAME=tutorial-cluster
     networks:
       - cassandra_network
 
   cassandra_temp:
-    image: cassandra:4.1.0
+    image: cassandra:4.0.7
     ports:
       - "9043:9042"
     volumes:
