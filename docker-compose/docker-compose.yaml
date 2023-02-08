@@ -11,9 +11,7 @@ services:
       - cassandra_network
 
   cassandra_temp:
-    image: cassandra:4.0.7
-    ports:
-      - "9043:9042"
+    image: cassandra:4.1.0
     volumes:
       - ./scripts/bash:/docker-entrypoint.sh
       - ./scripts/cql:/tmp/cql
